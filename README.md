@@ -25,4 +25,5 @@ Prikaz svih direktorijuma:
 
 # Dodatne informacije
 
-Aplikacija koristi Angular Router koji zahteva da prilikom pustanja aplikacije u produkciju svaka putanja redirektovana na index.html datoteku jer su rute definisane programski u javscript-u a ne fizicki postavljanjem fajlova.
+Aplikacija koristi Angular Router koji zahteva da prilikom pustanja aplikacije u produkciju svaka putanja bude redirektovana na index.html datoteku jer su rute definisane programski u javscript-u a ne fizicki postavljanjem fajlova.
+
