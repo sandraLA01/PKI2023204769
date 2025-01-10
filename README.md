@@ -1,59 +1,28 @@
-# 2023204769
+# 2023204769 Online salter bioskopa
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
+Ovaj repozitorijum poseduje izvorni kod za aplikaciju online salter bioskopa kao projekat iz predmet Programiranje korisnickih interfejsa
 
-## Development server
+# Tehnologije
 
-To start a local development server, run:
+Aplikacija je razvijena upotrebom frontend ookruzenja Angular 18. Pored toga koriscene su sledece biblioteke:
 
-```bash
-ng serve
-```
+- [Angular Material](https://material.angular.io)
+- [Sweet Alert 2](https://sweetalert2.github.io)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+# Struktura aplikacije
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Izvorni kod aplikacije koristi standardnu strukturu Angular projekta bez `app.modules.ts` datoteke koja nije potrebna upravo verzije 18. Svi potrebni moduli se uvoze direktno u komponentama koje ih koriste.
 
-```bash
-ng generate component component-name
-```
+Prikaz svih direktorijuma:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+- `src/app` - Glavni direktorijum koji sadrzi sve komponente
+- `src/models` - Direktorijum u kom skladistimo definicije tipova/interfejsa potrebnih za brzi razvoj aplikacije
+- `src/services` - Direktorijum koji sadrzi definicije servisa neophodnih za rad aplikacije
 
-## Building
 
-To build the project run:
 
-```bash
-ng build
-```
+# Dodatne informacije
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Aplikacija koristi Angular Router koji zahteva da prilikom pustanja aplikacije u produkciju svaka putanja redirektovana na index.html datoteku jer su rute definisane programski u javscript-u a ne fizicki postavljanjem fajlova.
