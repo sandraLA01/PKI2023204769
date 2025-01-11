@@ -1,1 +1,45 @@
-<p>projekcije works!</p>
+<div class="movie-list">
+    <h1>Projekcije Filmova</h1>
+
+    <!-- Defaultni filmovi -->
+    <ng-container *ngIf="!searchQuery && defaultMovies.length > 0">
+        <div *ngFor="let movie of defaultMovies" class="movie-card">
+            <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+            <h3>{{ movie.Title }} ({{ movie.Year }})</h3>
+            <p>Žanr: {{ movie.Genre }}</p>
+            <p>Režiser: {{ movie.Director }}</p>
+            <p>Ocena: {{ movie.imdbRating }}</p>
+            <p>Cena: 500 RSD</p>
+            <button (click)="reserveMovie(movie)">Rezerviši</button>
+        </div>
+    </ng-container>
+    <br>
+    <br>
+    <!-- Pretraga filmova -->
+    <div class="movie-search">
+        <h1>Pretraga Filmova</h1>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Unesite naziv filma" />
+        <button (click)="searchMovies()">Pretraži</button>
+    </div>
+    <br>
+    <br>
+    <div *ngIf="movies.length > 0" class="movie-list">
+        <h2>Rezultati Pretrage</h2>
+        <div *ngFor="let movie of movies" class="movie-card">
+            <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+            <h3>{{ movie.Title }} ({{ movie.Year }})</h3>
+            <p>Žanr: {{ movie.Genre }}</p>
+            <p>Režiser: {{ movie.Director }}</p>
+            <p>Ocena: {{ movie.imdbRating }}</p>
+            <p>Cena: 500 RSD</p>
+            <button (click)="reserveMovie(movie)"><br>Rezerviši<br></button>
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div *ngIf="movies.length === 0 && searchQuery">
+        <p>Nema rezultata za uneti pojam.</p>
+    </div>
+
+</div>
