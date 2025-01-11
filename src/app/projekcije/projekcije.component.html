@@ -1,5 +1,9 @@
-<div class="movie-list">
+<div class="nasl">
     <h1>Projekcije Filmova</h1>
+</div>
+
+<div class="movie-list">
+    
 
     <!-- Defaultni filmovi -->
     <ng-container *ngIf="!searchQuery && defaultMovies.length > 0">
@@ -32,7 +36,7 @@
             <p>Režiser: {{ movie.Director }}</p>
             <p>Ocena: {{ movie.imdbRating }}</p>
             <p>Cena: 500 RSD</p>
-            <button (click)="reserveMovie(movie)"><br>Rezerviši<br></button>
+            <button (click)="reserveMovie(movie)">Rezerviši</button>
             <br>
             <br>
         </div>

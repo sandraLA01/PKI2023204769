@@ -27,7 +27,7 @@ export class ProjekcijeComponent {
         Director: 'Christopher Nolan',
         Actors: 'Leonardo DiCaprio, Joseph Gordon-Levitt',
         Plot: 'A mind-bending thriller.',
-        Poster: 'https://via.placeholder.com/150',
+        Poster: 'https://m.media-amazon.com/images/I/51A6ZQ2H4HL._AC_.jpg',
         imdbRating: '8.8',
       },
       {
@@ -37,7 +37,7 @@ export class ProjekcijeComponent {
         Director: 'Christopher Nolan',
         Actors: 'Matthew McConaughey, Anne Hathaway',
         Plot: 'A journey beyond the stars.',
-        Poster: 'https://via.placeholder.com/150',
+        Poster: 'https://m.media-amazon.com/images/I/81g2b4YskKL._AC_SY679_.jpg',
         imdbRating: '8.6',
       },
     ];
