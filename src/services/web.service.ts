@@ -22,17 +22,17 @@ export interface CartItem {
   providedIn: 'root',
 })
 export class WebService {
-  private apiKey = '2910777b'; // Zamenite sa vašim API ključem
+  private apiKey = '2910777b';
   private baseUrl = 'http://www.omdbapi.com/';
 
   constructor(private http: HttpClient) {}
 
-  // Metoda za pretragu filmova po ključnoj reči
+  
   searchMovies(query: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}?apikey=${this.apiKey}&s=${query}`);
   }
 
-  // Metoda za dobijanje detalja o filmu po IMDb ID-u
+ 
   getMovieDetails(imdbID: string): Observable<Movie> {
     return this.http.get<Movie>(`${this.baseUrl}?apikey=${this.apiKey}&i=${imdbID}`);
   }

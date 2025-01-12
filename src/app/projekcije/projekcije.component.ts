@@ -2,23 +2,27 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { WebService, Movie } from '../../services/web.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-projekcije',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatIconModule, MatDividerModule, MatButtonModule, MatCardModule],
   templateUrl: './projekcije.component.html',
   styleUrls: ['./projekcije.component.css'],
 })
 export class ProjekcijeComponent {
   movies: Movie[] = [];
   searchQuery: string = '';
-  defaultMovies: Movie[] = []; // Filmovi koji se prikazuju inicijalno
+  defaultMovies: Movie[] = []; 
 
   constructor(private webService: WebService) {}
 
   ngOnInit(): void {
-    // Inicijalno postavljanje nekoliko filmova
+   
     this.defaultMovies = [
       {
         Title: 'Inception',
@@ -27,7 +31,7 @@ export class ProjekcijeComponent {
         Director: 'Christopher Nolan',
         Actors: 'Leonardo DiCaprio, Joseph Gordon-Levitt',
         Plot: 'A mind-bending thriller.',
-        Poster: 'https://m.media-amazon.com/images/I/51A6ZQ2H4HL._AC_.jpg',
+        Poster: 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/?ref_=tt_ov_i',
         imdbRating: '8.8',
       },
       {
@@ -37,7 +41,7 @@ export class ProjekcijeComponent {
         Director: 'Christopher Nolan',
         Actors: 'Matthew McConaughey, Anne Hathaway',
         Plot: 'A journey beyond the stars.',
-        Poster: 'https://m.media-amazon.com/images/I/81g2b4YskKL._AC_SY679_.jpg',
+        Poster: 'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/?ref_=tt_ov_i',
         imdbRating: '8.6',
       },
     ];
@@ -49,7 +53,7 @@ export class ProjekcijeComponent {
         const basicMovies = response.Search || [];
         this.movies = [];
 
-        // Povlačimo detalje za svaki film iz rezultata pretrage
+       
         basicMovies.forEach((basicMovie: any) => {
           this.webService.getMovieDetails(basicMovie.imdbID).subscribe((details: Movie) => {
             this.movies.push(details);
@@ -62,7 +66,7 @@ export class ProjekcijeComponent {
   reserveMovie(movie: Movie): void {
     this.webService.addToCart(movie, 500);
     alert(`${movie.Title} je rezervisan i dodat u korpu.`);
-    // Dodajte logiku za dodavanje u korpu
+
   }
 }
 
