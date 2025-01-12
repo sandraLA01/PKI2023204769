@@ -63,10 +63,13 @@ export class ProjekcijeComponent {
     }
   }
 
-  reserveMovie(movie: Movie): void {
-    this.webService.addToCart(movie, 500);
-    alert(`${movie.Title} je rezervisan i dodat u korpu.`);
-
+  addToCart(movie: any): void {
+    const projection = {
+      title: movie.Title,
+      price: 500, 
+    };
+    this.webService.addToCart(projection);
+    alert(`${movie.Title} je dodat u korpu.`);
   }
 }
 

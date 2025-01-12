@@ -37,17 +37,24 @@ export class WebService {
     return this.http.get<Movie>(`${this.baseUrl}?apikey=${this.apiKey}&i=${imdbID}`);
   }
 
-  private cart: CartItem[] = [];
+  private cart: any[] = []; 
 
-  addToCart(movie: Movie, price: number): void {
-    this.cart.push({ movie, price });
-  }
+    
+    getCart(): any[] {
+      return this.cart;
+    }
 
-  getCart(): CartItem[] {
-    return this.cart;
-  }
-
-  calculateTotal(): number {
-    return this.cart.reduce((total, item) => total + item.price, 0);
-  }
+    addToCart(projection: any): void {
+      this.cart.push(projection);
+    }
+  
+    
+    removeFromCart(index: number): void {
+      this.cart.splice(index, 1);
+    }
+  
+  
+    calculateTotal(): number {
+      return this.cart.reduce((total, item) => total + 500, 0);
+    }
 }

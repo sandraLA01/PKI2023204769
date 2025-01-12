@@ -1,7 +1,7 @@
 <mat-card class="profile-card">
     <mat-card-title>Profil korisnika</mat-card-title>
     <mat-card-content>
-      <!-- Prikaz podataka kada nije u režimu uređivanja -->
+      
       <div *ngIf="!isEditing">
         <p><strong>Ime:</strong> {{ user.firstName }}</p>
         <p><strong>Prezime:</strong> {{ user.lastName }}</p>
@@ -12,7 +12,7 @@
         <button mat-raised-button color="primary" (click)="enableEdit()">Uredi profil</button>
       </div>
   
-      <!-- Forma za uređivanje podataka -->
+    
       <form *ngIf="isEditing" (ngSubmit)="saveProfile()">
         <mat-form-field appearance="outline" class="form-field">
           <mat-label>Ime</mat-label>
