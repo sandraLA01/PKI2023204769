@@ -31,7 +31,7 @@ export class ProjekcijeComponent {
         Director: 'Christopher Nolan',
         Actors: 'Leonardo DiCaprio, Joseph Gordon-Levitt',
         Plot: 'A mind-bending thriller.',
-        Poster: 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392/?ref_=tt_ov_i',
+        Poster: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FInception_%2528soundtrack%2529&psig=AOvVaw3gxVWPfBzPWfHnclVlI2KX&ust=1736771048795000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMiI172W8IoDFQAAAAAdAAAAABAZ',
         imdbRating: '8.8',
       },
       {

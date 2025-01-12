@@ -1,1 +1,70 @@
-<p>profil works!</p>
+<mat-card class="profile-card">
+    <mat-card-title>Profil korisnika</mat-card-title>
+    <mat-card-content>
+      <!-- Prikaz podataka kada nije u režimu uređivanja -->
+      <div *ngIf="!isEditing">
+        <p><strong>Ime:</strong> {{ user.firstName }}</p>
+        <p><strong>Prezime:</strong> {{ user.lastName }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Telefon:</strong> {{ user.phone }}</p>
+        <p><strong>Adresa:</strong> {{ user.address }}</p>
+        <p><strong>Omiljeni žanrovi:</strong> {{ user.favoriteGenres }}</p>
+        <button mat-raised-button color="primary" (click)="enableEdit()">Uredi profil</button>
+      </div>
+  
+      <!-- Forma za uređivanje podataka -->
+      <form *ngIf="isEditing" (ngSubmit)="saveProfile()">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Ime</mat-label>
+          <input matInput [(ngModel)]="user.firstName" name="firstName" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Prezime</mat-label>
+          <input matInput [(ngModel)]="user.lastName" name="lastName" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="user.email" name="email" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Telefon</mat-label>
+          <input matInput [(ngModel)]="user.phone" name="phone" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Adresa</mat-label>
+          <input matInput [(ngModel)]="user.address" name="address" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Omiljeni žanrovi</mat-label>
+          <input matInput [(ngModel)]="user.favoriteGenres" name="favoriteGenres" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Korisničko ime</mat-label>
+          <input matInput [(ngModel)]="user.username" name="username" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Šifra</mat-label>
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="user.password"
+            name="password"
+            required
+          />
+        </mat-form-field>
+  
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit">Sačuvaj</button>
+          <button mat-raised-button color="warn" type="button" (click)="isEditing = false">Otkaži</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

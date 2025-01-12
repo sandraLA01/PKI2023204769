@@ -1,62 +1,56 @@
 <div class="movie-search">
     <h1>Projekcije Filmova</h1>
     <div class="search-bar">
-      <input
-        type="text"
-        [(ngModel)]="searchQuery"
-        placeholder="Pretraži filmove"
-        class="search-input"
-      />
-      <button mat-raised-button color="primary" (click)="searchMovies()">Pretraži</button>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Pretraži filmove" class="search-input" />
+        <button mat-raised-button color="primary" (click)="searchMovies()">Pretraži</button>
     </div>
-  </div>
-  
-  <div class="movie-list">
-    <!-- Defaultni filmovi -->
+</div>
+
+<div class="movie-list">
+
     <ng-container *ngIf="!searchQuery && defaultMovies.length > 0">
-      <div *ngFor="let movie of defaultMovies" class="movie-card">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <img [src]="movie.Poster" alt="{{ movie.Title }}" class="movie-image" />
-            <p><strong>Žanr:</strong> {{ movie.Genre }}</p>
-            <p><strong>Režiser:</strong> {{ movie.Director }}</p>
-            <p><strong>Ocena:</strong> {{ movie.imdbRating }}</p>
-            <p><strong>Cena:</strong> 500 RSD</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="reserveMovie(movie)">Rezerviši</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+        <div *ngFor="let movie of defaultMovies" class="movie-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <img [src]="movie.Poster" alt="{{ movie.Title }}" class="movie-image" />
+                    <p><strong>Žanr:</strong> {{ movie.Genre }}</p>
+                    <p><strong>Režiser:</strong> {{ movie.Director }}</p>
+                    <p><strong>Ocena:</strong> {{ movie.imdbRating }}</p>
+                    <p><strong>Cena:</strong> 500 RSD</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="reserveMovie(movie)">Rezerviši</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </ng-container>
-  
-    <!-- Pretraga filmova -->
+
+
     <ng-container *ngIf="searchQuery && movies.length > 0">
-      <div *ngFor="let movie of movies" class="movie-card">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <img [src]="movie.Poster" alt="{{ movie.Title }}" class="movie-image" />
-            <p><strong>Žanr:</strong> {{ movie.Genre }}</p>
-            <p><strong>Režiser:</strong> {{ movie.Director }}</p>
-            <p><strong>Ocena:</strong> {{ movie.imdbRating }}</p>
-            <p><strong>Cena:</strong> 500 RSD</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="reserveMovie(movie)">Rezerviši</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+        <div *ngFor="let movie of movies" class="movie-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{ movie.Title }} ({{ movie.Year }})</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <img [src]="movie.Poster" alt="{{ movie.Title }}" class="movie-image" />
+                    <p><strong>Žanr:</strong> {{ movie.Genre }}</p>
+                    <p><strong>Režiser:</strong> {{ movie.Director }}</p>
+                    <p><strong>Ocena:</strong> {{ movie.imdbRating }}</p>
+                    <p><strong>Cena:</strong> 500 RSD</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="reserveMovie(movie)">Rezerviši</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </ng-container>
-  
-    <!-- Ako nema rezultata pretrage -->
+
+
     <div *ngIf="movies.length === 0 && searchQuery">
-      <p>Nema rezultata za uneti pojam.</p>
+        <p>Nema rezultata za uneti pojam.</p>
     </div>
-  </div>
-  
+</div>

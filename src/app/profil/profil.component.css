@@ -1,0 +1,21 @@
+.profile-card {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    min-width: 100px;
+  }
+  
