@@ -18,9 +18,8 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './korpa.component.css'
 })
 export class KorpaComponent implements OnInit {
-  cart: any[] = []; // Rezervacije
-  totalPrice: number = 0; // Ukupna cena
-
+  cart: any[] = []; 
+  totalPrice: number = 0; 
   constructor(private webService: WebService) {}
 
   ngOnInit(): void {
@@ -28,13 +27,13 @@ export class KorpaComponent implements OnInit {
     this.calculateTotal();
   }
 
-  // Uklanjanje stavke iz korpe
+  
   removeFromCart(index: number): void {
     this.webService.removeFromCart(index);
     this.calculateTotal();
   }
 
-  // Izračunavanje ukupne cene
+ 
   calculateTotal(): void {
     this.totalPrice = this.webService.calculateTotal();
   }
